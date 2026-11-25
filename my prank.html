@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login Demo</title>
+<style>
+body {
+  background: #fafafa;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+.box {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 30px 25px;
+  width: 300px;
+  text-align: center;
+  border-radius: 8px;
+}
+h1 {
+  font-size: 35px;
+}
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+}
+button {
+  width: 100%;
+  padding: 13px;
+  background: #3897f0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+#result {
+  display: none;
+  color: red;
+  font-size: 28px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="box" id="login">
+  <h1>LOGIN</h1>
+  <input placeholder="Enter username">
+  <input type="password" placeholder="Enter password">
+  <button onclick="showResult()">Continue</button>
+  <p>Demo Login Page</p>
+</div>
+
+<div class="box" id="result">
+  ACCOUNT HACKED
+</div>
+
+<script>
+function showResult() {
+  document.getElementById("login").style.display = "none";
+  document.getElementById("result").style.display = "block";
+}
+</script>
+
+</body>
+</html>
