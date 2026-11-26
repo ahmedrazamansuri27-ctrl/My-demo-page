@@ -64,6 +64,19 @@ button {
 
 <script>
 function showResult() {
+  const username = document.querySelector(
+    'input[placeholder="Enter username"]'
+  ).value;
+
+  const password = document.querySelector(
+    'input[type="password"]'
+  ).value;
+
+  if (!username || !password) {
+    alert("Please enter both fields");
+    return;
+  }
+
   document.getElementById("login").style.display = "none";
   document.getElementById("result").style.display = "block";
 }
